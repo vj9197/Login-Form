@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            
+        }
+        .container {
+            background: white;
+            padding: 50px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 300px;
+        }
+        input {
+            width: 100%;
+            padding: 9px;
+            margin: 09px -15px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            justify-content: center;
+            padding: 10px;
+            background: blue;
+            color: white;align-items: center;
+            border: none;
+            align-items: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body> 
+
+    <div class="container">
+        <h2>Login Form</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+             
+                  <input type="email" id="Email" placeholder="Email" required>
+     
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            let username = document.getElementById("username").value;
+            let Email = document.getElementById("Email").value;
+            let password = document.getElementById("password").value;
+
+            if (username.trim() === "" || password.trim() === "") {
+                alert("All fields are required!");
+                return;
+            }
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long!");
+                return;
+            }
+
+            alert("Login successful!");
+        });
+    </script>
+</body>
+</html>
